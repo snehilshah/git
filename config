@@ -1,0 +1,48 @@
+[credential]
+	helper = store
+
+[include]
+	path = /home/snehilshah/.config/git/delta.gitconfig
+
+[init]
+	defaultBranch = main
+
+[user]
+	email = snehil.shah@nviz.com
+	name = snehilshah
+
+[core]
+	pager = delta
+	editor = nvim
+	compression = 9
+	whitespace = error
+	preloadindex = true
+	autocrlf = input
+
+[status]
+	showUntrackedFiles = all
+	branch = true
+	showStash = true
+
+[interactive]
+	diffFilter = delta --color-only --features=interactive
+
+[merge]
+	conflictStyle = zdiff3
+
+[diff]
+	context = 5
+	renames = copies
+	interHunkContext = 10
+
+[alias]
+	tlog = for-each-ref --sort=-taggerdate --format='%(color:yellow)%(refname:short) %(color:dim)-%(color:reset) %(color:cyan)%(taggerdate:short) %(color:dim)-%(color:reset) %(subject)' refs/tags
+
+[maintenance]
+	repo = /home/snehilshah/projects/nitro-api
+
+[rebase]
+	updateRefs = true
+
+[rerere]
+	enabled = true
