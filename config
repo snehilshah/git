@@ -9,7 +9,8 @@
 
 [user]
 	email = snehil.shah@nviz.com
-	name = snehilshah
+	name = snehilrshah
+	signingKey = 
 
 [core]
 	pager = delta
