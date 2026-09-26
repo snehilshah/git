@@ -30,14 +30,13 @@
 
 [merge]
 	conflictStyle = zdiff3
+	ff = false
 
 [diff]
-	context = 5
+	context = 3
 	renames = copies
 	interHunkContext = 10
-
-[alias]
-	tlog = for-each-ref --sort=-taggerdate --format='%(color:yellow)%(refname:short) %(color:dim)-%(color:reset) %(color:cyan)%(taggerdate:short) %(color:dim)-%(color:reset) %(subject)' refs/tags
+	algorithm = histogram
 
 [maintenance]
 	repo = /home/snehilshah/projects/nitro-api
@@ -47,3 +46,39 @@
 
 [rerere]
 	enabled = true
+[http]
+	cookiefile = /home/snehilshah/.gitcookies
+
+[color]
+	ui = true
+	status = auto
+	diff = auto
+	branch = auto
+	grep = auto
+[gpg]
+	format = 
+	program = gpg
+[commit]
+	gpgSign = false
+[push]
+	autoSetupRemote = true
+[tag]
+	forceSignAnnotated = false
+[gpg "ssh"]
+	program = 
+	allowedSignersFile = 
+[credential "https://github.com"]
+	helper = 
+	helper = !/home/linuxbrew/.linuxbrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/home/linuxbrew/.linuxbrew/bin/gh auth git-credential
+[coderabbit]
+	machineId = cli/77bb4a9f30ea45bd91a77a53277dd986
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[fetch]
+	prune = true
